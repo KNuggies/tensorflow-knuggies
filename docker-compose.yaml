@@ -5,7 +5,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - D:\github\tensorflow-knuggies\tf-notebooks:/tf-notebooks
+      - ./tf-notebooks:/tf-notebooks
     deploy:
       resources:
         reservations:
