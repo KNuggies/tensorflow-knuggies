@@ -1,0 +1,17 @@
+version: "1.0"
+services:
+  jupyter-lab:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - D:\github\tensorflow-knuggies\tf-notebooks:/tf-notebooks
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+volumes:
+  tf-notebooks:
+    external: true
