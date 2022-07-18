@@ -1,17 +1,15 @@
-version: "1.0"
+version: "1.1"
 services:
   jupyter-lab:
     build: .
     ports:
       - "8888:8888"
     volumes:
-      - ./tf-notebooks:/tf-notebooks
+      - ./tf-knugs:/tf-knugs
     deploy:
       resources:
         reservations:
           devices:
-            - capabilities: [gpu]
-
-volumes:
-  tf-notebooks:
-    external: true
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

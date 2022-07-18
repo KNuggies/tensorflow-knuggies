@@ -1,8 +1,11 @@
+# This assumes the container is running on a system with a CUDA GPU
 FROM tensorflow/tensorflow:latest-gpu
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+WORKDIR /tf-knugs
+
+# listing packages instead of requirements.txt so changes trigger a new image build
+RUN pip install jupyterlab pandas matplotlib
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab","--ip=0.0.0.0","--allow-root","--no-browser"] 
+ENTRYPOINT ["jupyter", "lab","--ip=0.0.0.0","--allow-root","--no-browser"]
