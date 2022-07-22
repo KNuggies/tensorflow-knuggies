@@ -3,7 +3,6 @@ FROM tensorflow/tensorflow:latest-gpu
 
 WORKDIR /tf-knugs
 
-# listing packages instead of requirements.txt so changes trigger a new image build
 RUN pip install jupyterlab pandas matplotlib
 
 EXPOSE 8888
