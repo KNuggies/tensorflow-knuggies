@@ -3,7 +3,7 @@ FROM tensorflow/tensorflow:latest-gpu
 
 WORKDIR /tf-knugs
 
-RUN pip install jupyterlab pandas matplotlib
+RUN pip install -U jupyterlab pandas matplotlib
 
 EXPOSE 8888
 
